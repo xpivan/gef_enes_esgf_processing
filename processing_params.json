@@ -1,0 +1,9 @@
+{
+    "function": {
+        "calc_operation": "time_avg",
+        "time_range_b": "01-01-2007",
+        "time_range_e": "31-12-2034",
+        "slice_mode": "year",
+        "var_name": "psl"
+    }
+}
