@@ -20,27 +20,18 @@ def netcdf_processing(in_file,
         plist = json.load(data_file)
 
 # Extract processing function parameters
-#{
-#    "function": {
-#        "calc_operation": "timeavg",
-#        "time_range_b": "01-01-2001",
-#        "time_range_e": "31-12-2030",
-#        "slice_mode": "None",
-#        "var_name": "psl"
-#    }
-#}
-    
-# Extract processing function parameters
+    var_name = plist["function"]["var_name"]
+    out_var_name = plist["function"]["out_var_name"]
+    slice_mode = plist["function"]["slice_mode"]
+    if slice_mode == "None": slice_mode = None
+
     if plist["function"]["calc_operation"] == "time_avg":
-        my_indice_params = {'indice_name': 'my_indice', 
+        my_indice_params = {'indice_name': out_var_name, 
                             'calc_operation': 'mean'
                             }
     else:
         raise ValueError('Operation specified in calc_operation is not implemented: '+plist["function"]["calc_operation"])
         
-    var_name = plist["function"]["var_name"]
-    slice_mode = plist["function"]["slice_mode"]
-
     dd_b, mm_b, yyyy_b = map(int, plist["function"]["time_range_b"].split('-'))
     dd_e, mm_e, yyyy_e = map(int, plist["function"]["time_range_e"].split('-'))
         
