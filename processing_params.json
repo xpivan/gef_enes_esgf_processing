@@ -1,18 +1,10 @@
 {
     "function": {
         "calc_operation": "time_avg",
-        "time_range_b": "01-01-2006",
+        "time_range_b": "01-01-2010",
         "time_range_e": "31-12-2014",
         "slice_mode": "None",
         "var_name": "tas",
-        "out_var_name": "tas",
-        "geo_domain": {
-          "latitude": {
-             "min": 30,
-             "max": 60 },
-          "longitude": {
-             "min": -30,
-             "max": 35 }
-         }
+        "out_var_name": "tas"
     }
 }
