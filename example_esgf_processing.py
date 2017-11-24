@@ -14,4 +14,4 @@ parser.add_argument("-key", "--api_key", help="Provide api_key to ESGF CWT",
 args = parser.parse_args()
 api_key = args.api_key
 
-gef_enes_esgf_processing.netcdf_processing("processing_params.json", api_key)
+gef_enes_esgf_processing.netcdf_processing("processing_params_esgf.json", api_key)

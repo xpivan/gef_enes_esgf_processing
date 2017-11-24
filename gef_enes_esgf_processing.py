@@ -57,13 +57,15 @@ def netcdf_processing(params_file,
         
     period = [datetime.datetime(yyyy_b,mm_b,dd_b), datetime.datetime(yyyy_e,mm_e,dd_e)]
 
-    # Get variable from in_file
-    varproc = cwt.Variable(in_file, var_name)
-
     if geo_domain_latmin != -9999 and geo_domain_latmax != -9999 and geo_domain_lonmin != -9999 and geo_domain_lonmax != -9999:
 
         # Setup ESGF CWT WPS
         wps = cwt.WPS(esgf_cwt_wps_url, api_key=api_key)
+
+        # Get variable from in_file
+        in_file_s = in_file.encode("ascii")
+        var_name_s = var_name.encode("ascii")
+        varproc = cwt.Variable(in_file_s, var_name_s)
 
         # Setup domain
         d0 = cwt.Domain([
