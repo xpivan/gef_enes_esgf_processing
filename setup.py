@@ -11,6 +11,8 @@ setup(
  
     # le nom de votre bibliotheque, tel qu'il apparaitre sur pypi
     name='eudat_gef_enes_processing',
+
+    version=1.0,
  
     # Liste les packages a inserer dans la distribution
     # plutot que de le faire a la main, on utilise la foncton
