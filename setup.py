@@ -10,7 +10,7 @@ import os
 setup(
  
     # le nom de votre bibliotheque, tel qu'il apparaitre sur pypi
-    name='eudat_gef_enes_processing',
+    name='gef_enes_esgf_processing',
 
     version=1.0,
  

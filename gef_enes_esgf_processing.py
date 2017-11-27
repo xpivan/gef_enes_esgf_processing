@@ -69,11 +69,11 @@ def netcdf_processing(params_file,
 
         # Setup domain
         d0 = cwt.Domain([
-                cwt.Dimension('time', 100, 300, cwt.INDICES),
+                cwt.Dimension('time', 0, 9999999, cwt.INDICES),
                 cwt.Dimension('lat', geo_domain_latmin, geo_domain_latmax),
                 cwt.Dimension('lon', geo_domain_lonmin, geo_domain_lonmax),
                 ])
-
+        
         # Select gridder
         cwt.gridder.Gridder('esmf', 'linear', varproc)
 
