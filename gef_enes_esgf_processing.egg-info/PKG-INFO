@@ -1,0 +1,12 @@
+Metadata-Version: 1.0
+Name: gef-enes-esgf-processing
+Version: 1.0
+Summary: Python execution of EUDAT GEF calling ESGF CWT and using icclim Use Case
+Home-page: https://github.com/cerfacs-globc/eudat_gef_enes_processing
+Author: Christian P.
+Author-email: christian.page@cerfacs.fr
+License: UNKNOWN
+Description-Content-Type: UNKNOWN
+Description: # eudat_gef_enes_processing
+        
+Platform: UNKNOWN
