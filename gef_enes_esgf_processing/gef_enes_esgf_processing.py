@@ -12,9 +12,7 @@ from icclim.util import callback
 import cwt
 import time
 
-def netcdf_processing(params_file,
-                      api_key
-                      ):
+def netcdf_processing(params_file):
 
 # Extract parameters for processing
     with open(params_file) as data_file:    
@@ -22,6 +20,7 @@ def netcdf_processing(params_file,
 
 # Extract processing function parameters
     var_name = plist["function"]["var_name"]
+    api_key = plist["function"]["api_key"]
     out_var_name = plist["function"]["out_var_name"]
     slice_mode = plist["function"]["slice_mode"]
     if slice_mode == "None": slice_mode = None
@@ -101,3 +100,10 @@ def netcdf_processing(params_file,
 
     # Launch processing using icclim
     icclim.indice(user_indice=my_indice_params, in_files=in_file, var_name=var_name, slice_mode=slice_mode, base_period_time_range=period, out_unit='days', out_file=out_file, callback=callback.defaultCallback2)
+
+
+if __name__ == "__main__":
+
+    params_file = "/root/input/processing_params_esgf.json" ## Enter path of the json here if different
+    netcdf_processing(params_file)
+
